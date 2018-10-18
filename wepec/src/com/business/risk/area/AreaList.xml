@@ -1,0 +1,427 @@
+<?xml  version="1.0" encoding="GBK"?>
+<page id="Area" mboname="Area"  beanclass="com.business.risk.area.Area" version="1.0">
+   <panel id="entrance" returnObj="true">
+      <tabpanel id="AreaTab" autoWidth="true" autoScroll="false">
+         <gridpanel menu="bnew,bdelete,bcommit" width="800"  height="480" tables="T_RISK_AREA,T_RISK_FX,T_RISK_MEASURES"  title="风险区域&lt;待提交&gt;" id="AreaEditList" op="edit"  url="methodName=getListEdit"  autoload="true" closable="false">
+           <column id="sysid" mapping="sysid" showname="t_risk_area$sysid" varname="sysid$number" hidden="true"/>
+           <column id="showdesc" mapping="showdesc" showname="t_risk_area$showdesc" varname="showdesc$string"   renderer="linkurl"/>
+           <column id="status" mapping="status" showname="t_risk_area$status" varname="status$string" renderer="auditurl"/>
+           <column id="changedate" mapping="changedate" showname="t_risk_area$changedate" varname="changedate$datetime"/>
+           <column id="changeuserid" mapping="changeuserid" showname="t_risk_area$changeuserid" varname="changeuserid$string"/>
+           <column id="changeusername" mapping="changeusername" showname="t_risk_area$changeusername" varname="changeusername$string"/>
+           <column id="orgid" mapping="orgid" showname="t_risk_area$orgid" varname="orgid$string"  hidden="false" />
+           <column id="orgname" mapping="orgname" showname="t_risk_area$orgname" varname="orgname$string"  hidden="false"/>
+           <column id="shbz" mapping="shbz" showname="t_risk_area$shbz" varname="shbz$number"  hidden="true"/>
+           <column id="workflowid" mapping="workflowid" showname="t_risk_area$workflowid" varname="workflowid$number"  hidden="true" />
+           <column id="unflag" mapping="unflag" showname="t_risk_area$unflag" varname="unflag$number"  hidden="true" />
+         </gridpanel> 
+         <gridpanel menu="baudit,bback" width="800"  height="480" tables="T_RISK_AREA,T_RISK_FX,T_RISK_MEASURES"  title="风险区域&lt;审核&gt;" id="AreaAuditList" op="audit"   url="methodName=getListAudit"  autoload="true" closable="false">
+           <column id="sysid" mapping="sysid" showname="t_risk_area$sysid" varname="sysid$number" hidden="true"/>
+           <column id="showdesc" mapping="showdesc" showname="t_risk_area$showdesc" varname="showdesc$string"   renderer="linkurl"/>
+           <column id="status" mapping="status" showname="t_risk_area$status" varname="status$string" renderer="auditurl"/>
+           <column id="changedate" mapping="changedate" showname="t_risk_area$changedate" varname="changedate$datetime"/>
+           <column id="changeuserid" mapping="changeuserid" showname="t_risk_area$changeuserid" varname="changeuserid$string"/>
+           <column id="changeusername" mapping="changeusername" showname="t_risk_area$changeusername" varname="changeusername$string"/>
+           <column id="orgid" mapping="orgid" showname="t_risk_area$orgid" varname="orgid$string"  hidden="false" />
+           <column id="orgname" mapping="orgname" showname="t_risk_area$orgname" varname="orgname$string"  hidden="false"/>
+           <column id="shbz" mapping="shbz" showname="t_risk_area$shbz" varname="shbz$number"  hidden="true"/>
+           <column id="workflowid" mapping="workflowid" showname="t_risk_area$workflowid" varname="workflowid$number"  hidden="true" />
+           <column id="unflag" mapping="unflag" showname="t_risk_area$unflag" varname="unflag$number"  hidden="true" />
+         </gridpanel> 
+         <gridpanel menu="bblock,brollback,bcancleBlock" width="800"  height="480" tables="T_RISK_AREA,T_RISK_FX,T_RISK_MEASURES"  title="风险区域&lt;注销回退&gt;" id="AreaRollList" op="roll"   url="methodName=getListRoll"  autoload="true" closable="false">
+           <column id="sysid" mapping="sysid" showname="t_risk_area$sysid" varname="sysid$number" hidden="true"/>
+           <column id="showdesc" mapping="showdesc" showname="t_risk_area$showdesc" varname="showdesc$string"   renderer="linkurl"/>
+           <column id="status" mapping="status" showname="t_risk_area$status" varname="status$string" renderer="auditurl"/>
+           <column id="changedate" mapping="changedate" showname="t_risk_area$changedate" varname="changedate$datetime"/>
+           <column id="changeuserid" mapping="changeuserid" showname="t_risk_area$changeuserid" varname="changeuserid$string"/>
+           <column id="changeusername" mapping="changeusername" showname="t_risk_area$changeusername" varname="changeusername$string"/>
+           <column id="orgid" mapping="orgid" showname="t_risk_area$orgid" varname="orgid$string"  hidden="false" />
+           <column id="orgname" mapping="orgname" showname="t_risk_area$orgname" varname="orgname$string"  hidden="false"/>
+           <column id="shbz" mapping="shbz" showname="t_risk_area$shbz" varname="shbz$number"  hidden="true"/>
+           <column id="workflowid" mapping="workflowid" showname="t_risk_area$workflowid" varname="workflowid$number"  hidden="true" />
+           <column id="unflag" mapping="unflag" showname="t_risk_area$unflag" varname="unflag$number"  hidden="true" />
+         </gridpanel> 
+         <gridpanel menu=" " width="800"  height="480" tables="T_RISK_AREA,T_RISK_FX,T_RISK_MEASURES"  title="风险区域&lt;查询&gt;" id="AreaQueryList" op="query" selType="rowmodel"  url="methodName=getListQuery"  autoload="true" closable="false">
+           <column id="sysid" mapping="sysid" showname="t_risk_area$sysid" varname="sysid$number" hidden="true"/>
+           <column id="showdesc" mapping="showdesc" showname="t_risk_area$showdesc" varname="showdesc$string"   renderer="linkurl"/>
+           <column id="status" mapping="status" showname="t_risk_area$status" varname="status$string" renderer="auditurl"/>
+           <column id="changedate" mapping="changedate" showname="t_risk_area$changedate" varname="changedate$datetime"/>
+           <column id="changeuserid" mapping="changeuserid" showname="t_risk_area$changeuserid" varname="changeuserid$string"/>
+           <column id="changeusername" mapping="changeusername" showname="t_risk_area$changeusername" varname="changeusername$string"/>
+           <column id="orgid" mapping="orgid" showname="t_risk_area$orgid" varname="orgid$string"  hidden="false" />
+           <column id="orgname" mapping="orgname" showname="t_risk_area$orgname" varname="orgname$string"  hidden="false"/>
+           <column id="shbz" mapping="shbz" showname="t_risk_area$shbz" varname="shbz$number"  hidden="true"/>
+           <column id="workflowid" mapping="workflowid" showname="t_risk_area$workflowid" varname="workflowid$number"  hidden="true" />
+           <column id="unflag" mapping="unflag" showname="t_risk_area$unflag" varname="unflag$number"  hidden="true" />
+         </gridpanel> 
+       </tabpanel>
+      <toolbar id="AreaTB">
+          <button id="bnew"   text="新增" handler="CurPageHandler"/>
+          <button id="bsave"  text="保存" handler="CurPageHandler"/>
+          <button id="bdelete" text="删除" handler="CurPageHandler"/>
+          <button id="bcommit" text="提交" handler="CurPageHandler"/>
+          <button id="baudit" text="审核通过" handler="CurPageHandler"/>
+          <button id="bback" text="审核拒绝" handler="CurPageHandler"/>
+          <button id="bblock" text="注销" handler="CurPageHandler"/>
+          <button id="bcancleBlock" text="取消注销" handler="CurPageHandler"/>
+          <button id="brollback" text="回退" handler="CurPageHandler"/>
+      </toolbar>
+   </panel>
+   <script id="script"><![CDATA[
+    //TabPanel 删除 Panel时提示保存数据
+    function beforeUnSave(t,c){
+       var b={};
+       b.id='bsave';
+          if(Ext.getCmp(t.formName).isDirty()){
+    		Ext.Msg.show({
+    		    title:'提示',
+    		    message: '是否需要保存?',
+    		   buttons: Ext.Msg.YESNOCANCEL,
+    		    icon: Ext.Msg.QUESTION,
+    		    fn: function(btn) {
+    		        if (btn === 'yes') {
+    		           if(CurPageHandler(b)){
+    		             t.remove(c,true);
+    		             }
+         	        } else if (btn === 'no') {
+    		           dirtyInit(Ext.getCmp(t.formName));t.remove(c,true);
+    		        } else {} 
+    		    }
+    		}); 
+    	   return false;
+        }
+    }
+    //关闭表单时，提示保存
+     AreaTab.formName='AreaForm1';
+     AreaTab.on('beforeremove',beforeUnSave,this);
+     
+     AreaListGrid=Ext.getCmp('AreaEditList');
+     AreaAuditList=Ext.getCmp('AreaAuditList');
+     AreaQueryList=Ext.getCmp('AreaQueryList');
+     AreaRollList=Ext.getCmp('AreaRollList');
+     //重新刷新数据
+     function reloadData(){
+       AreaListGrid.getStore().reload();
+       AreaAuditList.getStore().reload();
+       AreaRollList.getStore().reload();
+       AreaQueryList.getStore().reload();
+     }
+     function CurPageHandler(t){
+             if(t.id=='bsaveandnew'){
+               var b = {};
+               b.id='bsave';
+               if(CurPageHandler(b)){ 
+               b.id='bnew';
+               CurPageHandler(b);
+               }}
+               
+             //点击新增
+	        if(t.id=="bnew"){
+	              var  AreaForm = AreaTab.queryById("AreaForm");
+	              if(AreaForm !=null){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	                }
+	                 if(AreaForm ==null){
+	                 Ext.Msg.wait("请求正在提交中,请等候...", "请求", "...");
+	                  Ext.Ajax.request({
+	                    url:'MainAction.action?appFile=com.business.risk.area.AreaDetail&sysid=0',
+	                     success: function(response, options) {
+	                      Ext.Msg.hide();
+	                       var responseArray = response.responseText;
+	                       eval(responseArray);
+						   AreaTab.add(AreaForm).show();
+	                    } 
+	                  });
+	               }
+	           }
+	         //点击保存
+	        if(t.id=="bsave"){
+	          if(Ext.getCmp('AreaForm1').getForm().isValid()){//验证表单
+                var json= Ext.getCmp('AreaForm1').getForm().getValues(true);
+                var cjson=formChange(Ext.getCmp('AreaForm1').getForm().getValues(false,true,false,false),Ext.getCmp('AreaForm1').getForm().findField('t_risk_area$sysid').getValue());
+                json=form2Json([{table:'t_risk_area',detail:json},{table:'t_bs_colchangelog',detail:cjson}]);
+                var r = syncSubmitForm('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=save',json);
+	            if('ok'==r){
+                 AreaListGrid.getStore().reload();
+                 dirtyInit(Ext.getCmp('AreaForm1'));//设置表单状态
+	             Ext.MessageBox.alert('结果:', '保存成功');
+	             return true;
+	             }else{
+		             Ext.MessageBox.alert('结果:', '保存失败');
+		              return false;
+		            }
+		       }else{
+		              Ext.MessageBox.alert('结果:', '表单验证失败');
+		              return false;
+		            }
+	           }   
+	     // 提交 
+	     if(t.id=="bcommit"){    
+	         var records = AreaListGrid.getSelectionModel().getSelection();
+	         var commitStr = "";
+	          for(var i=0;i<records.length;i++){
+	            if(i==0){commitStr +=records[i].get('sysid$number');}
+	            else{commitStr += ","+records[i].get('sysid$number')+"";}
+	          }
+	           commitStr += "";
+	           if(commitStr=="" || commitStr=='undefined'){Ext.MessageBox.alert('结果:', '无数据提交！');return false;}
+               submitFormCallBack('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=commit',commitStr,reloadData);
+               var  AreaForm = AreaTab.queryById("AreaForm");
+	              if(AreaForm !=null){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	              }
+            }
+          // 删除  
+           if(t.id=="bdelete"){    
+	         var records = AreaListGrid.getSelectionModel().getSelection();
+	         var delStr = "(";
+	          for(var i=0;i<records.length;i++){
+	            if(i==0){delStr +=records[i].get('sysid$number');}
+	            else{delStr += ","+records[i].get('sysid$number')+"";}
+	          }
+	           delStr += ")";
+	           if(delStr=="" || delStr=="(undefined)"){Ext.MessageBox.alert('结果:', '无数据提交！');return false;}
+               submitForm('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=del',delStr,AreaListGrid.getStore());
+               var  AreaForm = AreaTab.queryById("AreaForm");
+	              if(AreaForm !=null){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	           }
+            }
+           // 审核通过 
+	     if(t.id=="baudit" || t.id=="bback"){    
+	         var records = AreaAuditList.getSelectionModel().getSelection();
+	         var pass='1';
+	         if(t.id=="bback"){pass='0';}
+	         var commitStr = "";
+	          for(var i=0;i<records.length;i++){
+	            if(i==0){commitStr +=records[i].get('sysid$number');}
+	            else{commitStr += ","+records[i].get('sysid$number')+"";}
+	          }
+	           commitStr += "";
+	           if(commitStr=="" || commitStr=='undefined'){Ext.MessageBox.alert('结果:', '无数据提交！');return false;}
+	           Ext.Msg.prompt('提示', '请输入意见:', function(btn, text){
+				    if (btn == 'ok'){
+				        if(text==''){
+				          text='同意';
+				          if(t.id=="bback"){ text='不同意';}
+				        }
+				         submitFormCallBack('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=audit&msg='+encodeURIComponent(encodeURIComponent(text))+'&pass='+pass,commitStr,reloadData);
+                         var  AreaForm = AreaTab.queryById("AreaForm");
+			              if(AreaForm !=null){
+			                  AreaTab.remove(AreaForm,true);AreaForm=null;
+			              }
+				    }
+				});
+            } 
+            
+          //回退 
+	     if(t.id=="brollback"){    
+	         var records = AreaRollList.getSelectionModel().getSelection();
+	         var commitStr = "";
+	          for(var i=0;i<records.length;i++){
+	            if(i==0){commitStr +=records[i].get('sysid$number');}
+	            else{commitStr += ","+records[i].get('sysid$number')+"";}
+	          }
+	           commitStr += "";
+	           if(commitStr=="" || commitStr=='undefined'){Ext.MessageBox.alert('结果:', '无数据提交！');return false;}
+               submitFormCallBack('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=rollback',commitStr,reloadData);
+               var  AreaForm = AreaTab.queryById("AreaForm");
+	              if(AreaForm !=null){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	              }
+            }
+            
+	     
+          //注销 
+	     if(t.id=="bblock"){    
+	         var records = AreaRollList.getSelectionModel().getSelection();
+	         var commitStr = "";
+	          for(var i=0;i<records.length;i++){
+	            if(i==0){commitStr +=records[i].get('sysid$number');}
+	            else{commitStr += ","+records[i].get('sysid$number')+"";}
+	          }
+	           commitStr += "";
+	           if(commitStr=="" || commitStr=='undefined'){Ext.MessageBox.alert('结果:', '无数据提交！');return false;}
+               submitFormCallBack('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=block',commitStr,reloadData);
+               var  AreaForm = AreaTab.queryById("AreaForm");
+	              if(AreaForm !=null){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	              }
+            }
+            
+          //取消注销 
+	     if(t.id=="bcancleBlock"){    
+	         var records = AreaRollList.getSelectionModel().getSelection();
+	         var commitStr = "";
+	          for(var i=0;i<records.length;i++){
+	            if(i==0){commitStr +=records[i].get('sysid$number');}
+	            else{commitStr += ","+records[i].get('sysid$number')+"";}
+	          }
+	           commitStr += "";
+	           if(commitStr=="" || commitStr=='undefined'){Ext.MessageBox.alert('结果:', '无数据提交！');return false;}
+               submitFormCallBack('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=cancleBlock',commitStr,reloadData);
+               var  AreaForm = AreaTab.queryById("AreaForm");
+	              if(AreaForm !=null){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	              }
+            }
+            
+	     
+     }
+      //编辑-点击链接，进入到明细编辑状态
+      AreaListGrid.on('cellclick',STshowDetail,this);
+      function STshowDetail(grid,td,cellIndex,record,tr,rowIndex,e,eOpts ){
+          var e=window.event||e;
+          sysid = record.get("sysid$number");if(sysid==undefined){return false;}
+          if( cellIndex>0 && 'showdesc$string'==AreaListGrid.columns[cellIndex-1].dataIndex && e.button==0){
+            vurl='MainAction.action?appFile=com.business.risk.area.AreaDetail&sysid='+sysid+'&unflag='+sysid;
+            var  AreaForm = null;
+            AreaForm = AreaTab.queryById("AreaForm");
+            if(AreaForm !=null  && sysid != undefined){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	                }
+	                 if(AreaForm ==null  && sysid != undefined){
+	                 Ext.Msg.wait("请求正在提交中,请等候...", "请求", "...");
+	                  Ext.Ajax.request({
+	                    url:vurl,
+	                     success: function(response, options) {
+	                      Ext.Msg.hide();
+	                       var responseArray = response.responseText;
+	                       eval(responseArray);
+						   AreaTab.add(AreaForm).show();
+	                    } 
+	                  });
+	               }
+           }
+           if( cellIndex>0 && 'status$string'==AreaListGrid.columns[cellIndex-1].dataIndex && e.button==0){
+               showWorkflowInfo('t_risk_area',record.get("sysid$number"));
+           }
+    }
+    
+ 
+       //审核-点击链接，进入到审核页面
+      AreaAuditList.on('cellclick',STshowAudit,this);
+      function STshowAudit(grid,td,cellIndex,record,tr,rowIndex,e,eOpts ){
+          var e=window.event||e;
+          sysid = record.get("sysid$number");if(sysid==undefined){return false;}
+           if( cellIndex>0 && 'status$string'==AreaAuditList.columns[cellIndex-1].dataIndex && e.button==0){
+               showWorkflowInfo('t_risk_area',record.get("sysid$number"),record.get("workflowid$number"));
+           }
+           
+           if( cellIndex>0 && 'showdesc$string'==AreaAuditList.columns[cellIndex-1].dataIndex && e.button==0){
+           vurl='MainAction.action?appFile=com.business.risk.area.AreaAudit&sysid='+sysid+'&unflag='+sysid;
+            var  AreaForm = null;
+            AreaForm = AreaTab.queryById("AreaForm");
+             if(AreaForm !=null  && sysid != undefined){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	                }
+	                 if(AreaForm ==null  && sysid != undefined){
+	                 Ext.Msg.wait("请求正在提交中,请等候...", "请求", "...");
+	                  Ext.Ajax.request({
+	                    url:vurl,
+	                     success: function(response, options) {
+	                      Ext.Msg.hide();
+	                       var responseArray = response.responseText;
+	                       eval(responseArray);
+						   AreaTab.add(AreaForm).show();
+	                    } 
+	                  });
+	               }
+           }
+    }
+    
+    //查询-点击链接，进入到只读页面
+      AreaQueryList.on('cellclick',STshowQuery,this);
+      function STshowQuery(grid,td,cellIndex,record,tr,rowIndex,e,eOpts ){
+           
+          var e=window.event||e;
+          sysid = record.get("sysid$number");if(sysid==undefined){return false;}
+           if( cellIndex>0 && 'status$string'==AreaQueryList.columns[cellIndex].dataIndex && e.button==0){
+               showWorkflowInfo('t_risk_area',record.get("sysid$number"),record.get("workflowid$number"));
+           }
+           if( cellIndex>=0 && 'showdesc$string'==AreaQueryList.columns[cellIndex].dataIndex && e.button==0){
+           vurl='MainAction.action?appFile=com.business.risk.area.AreaRead&sysid='+sysid+'&unflag='+sysid;
+            var  AreaForm = null;
+            AreaForm = AreaTab.queryById("AreaForm");
+             if(AreaForm !=null  && sysid != undefined){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	                }
+	                 if(AreaForm ==null  && sysid != undefined){
+	                 Ext.Msg.wait("请求正在提交中,请等候...", "请求", "...");
+	                  Ext.Ajax.request({
+	                    url:vurl,
+	                     success: function(response, options) {
+	                      Ext.Msg.hide();
+	                       var responseArray = response.responseText;
+	                       eval(responseArray);
+						   AreaTab.add(AreaForm).show();
+	                    } 
+	                  });
+	               }
+           }
+    }
+ 
+     
+    //注销-点击链接，进入到只读页面
+      AreaRollList.on('cellclick',STshowRoll,this);
+      function STshowRoll(grid,td,cellIndex,record,tr,rowIndex,e,eOpts ){
+           
+          var e=window.event||e;
+          sysid = record.get("sysid$number");if(sysid==undefined){return false;}
+           if( cellIndex>0 && 'status$string'==AreaRollList.columns[cellIndex-1].dataIndex && e.button==0){
+               showWorkflowInfo('t_risk_area',record.get("sysid$number"),record.get("workflowid$number"));
+           }
+           if( cellIndex>0 && 'showdesc$string'==AreaRollList.columns[cellIndex-1].dataIndex && e.button==0){
+           vurl='MainAction.action?appFile=com.business.risk.area.AreaRead&sysid='+sysid+'&unflag='+sysid;
+            var  AreaForm = null;
+            AreaForm = AreaTab.queryById("AreaForm");
+             if(AreaForm !=null  && sysid != undefined){
+	                  AreaTab.remove(AreaForm,true);AreaForm=null;
+	                }
+	                 if(AreaForm ==null  && sysid != undefined){
+	                 Ext.Msg.wait("请求正在提交中,请等候...", "请求", "...");
+	                  Ext.Ajax.request({
+	                    url:vurl,
+	                     success: function(response, options) {
+	                      Ext.Msg.hide();
+	                       var responseArray = response.responseText;
+	                       eval(responseArray);
+						   AreaTab.add(AreaForm).show();
+	                    } 
+	                  });
+	               }
+           }
+    }
+ 
+     
+    //以下为表格鼠标右键响应处理
+    var t={};
+    var deleteAction = Ext.create('Ext.Action', {iconCls: 'deleteButton', text: '删除', disabled: true, handler: function(widget,event){t.id='bdelete';CurPageHandler(t);}});
+    var commitAction = Ext.create('Ext.Action', {iconCls: 'commitButton', text: '提交', disabled: true, handler: function(widget,event){t.id='bcommit';CurPageHandler(t);}});
+    var auditpassAction = Ext.create('Ext.Action', {iconCls: 'auditpassButton', text: '审批通过', disabled: true, handler: function(widget,event){t.id='baudit';CurPageHandler(t);}});
+    var auditbackAction = Ext.create('Ext.Action', {iconCls: 'rollbackButton', text: '审批拒绝', disabled: true, handler: function(widget,event){t.id='bback';CurPageHandler(t);}});
+    var rollbackAction = Ext.create('Ext.Action', {iconCls: 'rollbackButton', text: '回退', disabled: true, handler: function(widget,event){t.id='brollback';CurPageHandler(t);}});
+    var blockAction = Ext.create('Ext.Action', {iconCls: 'blockButton', text: '注销', disabled: true, handler: function(widget,event){t.id='bblock';CurPageHandler(t);}});
+    var cancleBlockAction = Ext.create('Ext.Action', {iconCls: 'undoButton', text: '取消注销', disabled: true, handler: function(widget,event){t.id='bcancleBlock';CurPageHandler(t);}});
+    var logOne = Ext.create('Ext.Action', {iconCls: 'log', text: '查看变更日志', disabled: true, handler: function(widget,event){showGridLog(logOne.table,logOne.data.sysid);}});
+     
+    var listContextMenu = Ext.create('Ext.menu.Menu', {items: [deleteAction,commitAction]}); 
+    var auditContextMenu = Ext.create('Ext.menu.Menu', {items: [auditpassAction,auditbackAction,logOne]}); 
+    var rollContextMenu = Ext.create('Ext.menu.Menu', {items: [blockAction,rollbackAction,cancleBlockAction,logOne]}); 
+    var queryContextMenu = Ext.create('Ext.menu.Menu', {items: [logOne]}); 
+    
+    AreaListGrid.getView().on('itemcontextmenu',AreaListGridPOP,this);
+    function AreaListGridPOP(view,rec,node,index,e){e.stopEvent();listContextMenu.showAt(e.getXY());return false;}
+    AreaListGrid.getSelectionModel().on({selectionchange: function(sm, selections) {if (selections.length) {deleteAction.enable(); commitAction.enable();} else {deleteAction.disable(); commitAction.disable();}}});
+    AreaAuditList.getView().on('itemcontextmenu',AreaAuditGridPOP,this);
+    function AreaAuditGridPOP(view,rec,node,index,e){e.stopEvent();auditContextMenu.showAt(e.getXY());return false;}
+    AreaAuditList.getSelectionModel().on({selectionchange: function(sm, selections) {if (selections.length) {auditpassAction.enable(); auditbackAction.enable();logOne.enable();logOne.table=AreaAuditList.tables;logOne.data=selections[0].data; } else {auditpassAction.disable(); auditbackAction.disable();logOne.disable();}}});
+    AreaRollList.getView().on('itemcontextmenu',AreaRollGridPOP,this);
+    function AreaRollGridPOP(view,rec,node,index,e){e.stopEvent();rollContextMenu.showAt(e.getXY());return false;}
+    AreaRollList.getSelectionModel().on({selectionchange: function(sm, selections) {if (selections.length) {rollbackAction.enable();blockAction.enable();cancleBlockAction.enable();logOne.enable();logOne.table=AreaRollList.tables;logOne.data=selections[0].data; } else {rollbackAction.disable();blockAction.disable();cancleBlockAction.disable();logOne.disable();}}}); 
+    AreaQueryList.getView().on('itemcontextmenu',AreaQueryGridPOP,this);
+    function AreaQueryGridPOP(view,rec,node,index,e){e.stopEvent();queryContextMenu.showAt(e.getXY());return false;}
+    AreaQueryList.getSelectionModel().on({selectionchange: function(sm, selections) {if (selections.length) {logOne.enable(); logOne.table=AreaQueryList.tables;logOne.data=selections[0].data; } else {logOne.disable();}}}); 
+     ]]>
+    </script>
+</page>

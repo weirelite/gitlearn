@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="GBK"?>
+<page id="AreaAudit" mboname="AreaAudit"  beanclass="com.business.risk.area.Area" version="1.0">
+   <panel id="AreaForm"  menu="baudit,bback"  closable="true" returnObj="true" layout="auto"   width="1270"  autoScroll="true"    title="风险区域&lt;审核页面&gt;">
+         <formpanel id="AreaForm1"  closable="true"    layout="tableform" columns="1" height="400"   method="initForm">
+			 <formwidget id="filesetBegin1" xtype="filesetBegin" title="基本信息" columns="2"  />
+			    <formwidget fieldLabel="t_risk_area$showdesc" id="t_risk_area$showdesc" xtype="displayfield" allowBlank="false" width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$parnet" id="t_risk_area$parnet" readOnly="true" xtype="textfield"   width="200" colspan="1"  />
+			    <formwidget fieldLabel="t_risk_area$bm" id="t_risk_area$bm" readOnly="true" xtype="textfield"   width="200" colspan="1"  />
+			    <formwidget fieldLabel="t_risk_area$lastuserid" id="t_risk_area$lastuserid" readOnly="true" xtype="textfield"   width="200" colspan="1"  />
+			    <formwidget fieldLabel="t_risk_area$lastusername" id="t_risk_area$lastusername" readOnly="true" xtype="textfield"   width="200" colspan="1"  />
+			    <formwidget fieldLabel="t_risk_area$lastdate" id="t_risk_area$lastdate" readOnly="true" xtype="textfield"   width="200" colspan="1"  />
+			    <formwidget id="filesetEnd1" xtype="filesetEnd"  /> 
+			    <formwidget id="userInfoBegin" xtype="filesetBegin" title="制单用户信息" columns="2"  />
+			    <formwidget fieldLabel="t_risk_area$status" id="t_risk_area$status" xtype="displayfield"   width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$changeusername" id="t_risk_area$changeusername" xtype="displayfield"  width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$orgname" id="t_risk_area$orgname" xtype="displayfield"   width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$changedate" id="t_risk_area$changedate" xtype="displayfield"   width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$changeuserid" id="t_risk_area$changeuserid" xtype="hidden"  width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$orgid" id="t_risk_area$orgid" xtype="hidden"   width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$unflag" id="t_risk_area$unflag" xtype="hidden"   width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$workflowid" id="t_risk_area$workflowid" xtype="hidden"  width="200" colspan="1"  />
+			    <formwidget fieldLabel="t_risk_area$shbz" id="t_risk_area$shbz" xtype="hidden"   width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$sysid" id="t_risk_area$sysid" xtype="hidden"   width="200" colspan="1" />
+ 	  		    <formwidget id="userInfoEnd" xtype="filesetEnd"  /> 
+ 	  		 </formpanel>
+	     <gridpanel menu=" "  title="风险" id="nullList" adquery="false"  url="methodName=getnullList&amp;#{unflag}"  autoload="true" closable="false" collapsible="true" collapsed="false">
+			<column id="bz" mapping="bz" showname="t_risk_fx$bz"  varname="bz" hidden="false"      />
+			<column id="jz" mapping="jz" showname="t_risk_fx$jz"  varname="jz" hidden="false"      />
+			<column id="wd" mapping="wd" showname="t_risk_fx$wd"  varname="wd" hidden="false"      />
+			<column id="yl" mapping="yl" showname="t_risk_fx$yl"  varname="yl" hidden="false"      />
+			<column id="fxbsfl" mapping="fxbsfl" showname="t_risk_fx$fxbsfl"  varname="fxbsfl" hidden="false"      />
+			<column id="billid" mapping="billid" showname="t_risk_fx$billid"  varname="billid" hidden="false"      />
+		   </gridpanel>
+	     <gridpanel menu=" "  title="风控措施" id="nullList" adquery="false"  url="methodName=getnullList&amp;#{unflag}"  autoload="true" closable="false" collapsible="true" collapsed="false">
+			<column id="sysid" mapping="sysid" showname="t_risk_measures$sysid"  varname="sysid" hidden="false"      />
+			<column id="riskname" mapping="riskname" showname="t_risk_measures$riskname"  varname="riskname" hidden="false"      />
+			<column id="showdesc" mapping="showdesc" showname="t_risk_measures$showdesc"  varname="showdesc" hidden="false"      />
+			<column id="status" mapping="status" showname="t_risk_measures$status"  varname="status" hidden="false"      />
+			<column id="ydcs" mapping="ydcs" showname="t_risk_measures$ydcs"  varname="ydcs" hidden="false"      />
+			<column id="bz" mapping="bz" showname="t_risk_measures$bz"  varname="bz" hidden="false"      />
+			<column id="workflowid" mapping="workflowid" showname="t_risk_measures$workflowid"  varname="workflowid" hidden="false"      />
+			<column id="shbz" mapping="shbz" showname="t_risk_measures$shbz"  varname="shbz" hidden="false"      />
+			<column id="orgname" mapping="orgname" showname="t_risk_measures$orgname"  varname="orgname" hidden="false"      />
+			<column id="orgid" mapping="orgid" showname="t_risk_measures$orgid"  varname="orgid" hidden="false"      />
+			<column id="changedate" mapping="changedate" showname="t_risk_measures$changedate"  varname="changedate" hidden="false"      />
+			<column id="changeuserid" mapping="changeuserid" showname="t_risk_measures$changeuserid"  varname="changeuserid" hidden="false"      />
+			<column id="changeusername" mapping="changeusername" showname="t_risk_measures$changeusername"  varname="changeusername" hidden="false"      />
+			<column id="lastuserid" mapping="lastuserid" showname="t_risk_measures$lastuserid"  varname="lastuserid" hidden="false"      />
+			<column id="lastusername" mapping="lastusername" showname="t_risk_measures$lastusername"  varname="lastusername" hidden="false"      />
+			<column id="lastdate" mapping="lastdate" showname="t_risk_measures$lastdate"  varname="lastdate" hidden="false"      />
+			<column id="unflag" mapping="unflag" showname="t_risk_measures$unflag"  varname="unflag" hidden="false"      />
+		   </gridpanel>
+		   <gridpanel  width="1270" height="170"   title="附件列表" id="fileList"  adquery="true" op="singleOP"  url="methodName=getFileList&amp;#{unflag}&amp;tablename=T_RISK_AREA"  autoload="true" closable="false" >
+		           <column id="sysid" mapping="sysid" showname="t_bs_appendix$sysid" varname="sysid$number"  hidden="true" />
+		           <column id="billno" mapping="billno" showname="t_bs_appendix$billno" varname="billno$string"   hidden="true" />
+		           <column id="tablename" mapping="tablename" showname="t_bs_appendix$tablename" varname="tablename$string"  hidden="true" />
+		           <column id="filename" mapping="filename" showname="t_bs_appendix$filename" width="450" varname="filename$string" renderer="linkurl"  />
+		           <column id="filetype" mapping="filetype" showname="t_bs_appendix$filetype" width="150" varname="filetype$string"  />
+		           <column id="changeuserid" mapping="changeuserid" showname="t_bs_appendix$changeuserid" width="150" varname="changeuserid$string"   />
+		           <column id="changedate" mapping="changedate" showname="t_bs_appendix$changedate" width="150" varname="changedate$date"  />
+		   </gridpanel>
+   </panel>
+   <script id="script"><![CDATA[
+   
+      //下载电子文档
+      fileList.on('cellclick',fileDownload,this);
+   
+      ]]>
+   </script></page>

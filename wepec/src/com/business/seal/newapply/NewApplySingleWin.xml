@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GBK"?>
+ <page id="pageNewApplySingleWin" mboname="pageNewApplySingleWin"  beanclass="com.business.seal.newapply.NewApply" version="1.0">
+   <window id="NewApplySingleWin" title="选择重盖申请" layout="fit" show="true" >
+   	 <gridpanel id="NewApplySingleWinList" menu=" " width="800"  height="480" tables="T_SEAL_NEWAPPLY"  singleSelect="true" op="block"  url="methodName=getListChoose"  autoload="true" closable="false">
+           <column id="sysid" mapping="sysid" showname="t_seal_newapply$sysid" varname="sysid$number" hidden="true"/>
+           <column id="showdesc" mapping="showdesc" showname="t_seal_newapply$showdesc" varname="showdesc$string"   renderer="linkurl"/>
+           <column id="status" mapping="status" showname="t_seal_newapply$status" varname="status$string" renderer="auditurl"/>
+           <column id="code" mapping="code" showname="t_seal_newapply$code" varname="code$string"   />
+           <column id="apply_code" mapping="apply_code" showname="t_seal_newapply$apply_code" varname="apply_code$string"   />
+           <column id="apply_name" mapping="apply_name" showname="t_seal_newapply$apply_name" varname="apply_name$string"   />
+           <column id="seal_id" mapping="seal_id" showname="t_seal_newapply$seal_id" varname="seal_id$string"   />
+           <column id="seal_code" mapping="seal_code" showname="t_seal_newapply$seal_code" varname="seal_code$string"   />
+           <column id="seal_name" mapping="seal_name" showname="t_seal_newapply$seal_name" varname="seal_name$string"   />
+           <column id="sealdevice_code" mapping="sealdevice_code" showname="t_seal_newapply$sealdevice_code" varname="sealdevice_code$string"   />
+           <column id="sealdevice" mapping="sealdevice" showname="t_seal_newapply$sealdevice" varname="sealdevice$string"   />
+           <column id="operator_code" mapping="operator_code" showname="t_seal_newapply$operator_code" varname="operator_code$string"   />
+           <column id="operator_name" mapping="operator_name" showname="t_seal_newapply$operator_name" varname="operator_name$string"   />
+           <column id="agent_code" mapping="agent_code" showname="t_seal_newapply$agent_code" varname="agent_code$string"   />
+           <column id="agent_name" mapping="agent_name" showname="t_seal_newapply$agent_name" varname="agent_name$string"   />
+           <column id="agent_orgid" mapping="agent_orgid" showname="t_seal_newapply$agent_orgid" varname="agent_orgid$string"   />
+           <column id="agent_orgname" mapping="agent_orgname" showname="t_seal_newapply$agent_orgname" varname="agent_orgname$string"   />
+           <column id="secret" mapping="secret" showname="t_seal_newapply$secret" varname="secret$string"   />
+           <column id="paging_seal" mapping="paging_seal" showname="t_seal_newapply$paging_seal" varname="paging_seal$string"   />
+           <column id="seal_frequency" mapping="seal_frequency" showname="t_seal_newapply$seal_frequency" varname="seal_frequency$number"   />
+           <column id="seal_date" mapping="seal_date" showname="t_seal_newapply$seal_date" varname="seal_date$date"   />
+           <column id="seal_account" mapping="seal_account" showname="t_seal_newapply$seal_account" varname="seal_account$string"   />
+           <column id="seal_position" mapping="seal_position" showname="t_seal_newapply$seal_position" varname="seal_position$string"   />
+           <column id="material_description" mapping="material_description" showname="t_seal_newapply$material_description" varname="material_description$string"   />
+           <column id="account" mapping="account" showname="t_seal_newapply$account" varname="account$string"   />
+           <column id="lastuserid" mapping="lastuserid" showname="t_seal_newapply$lastuserid" varname="lastuserid$string"   />
+           <column id="lastusername" mapping="lastusername" showname="t_seal_newapply$lastusername" varname="lastusername$string"   />
+           <column id="lastdate" mapping="lastdate" showname="t_seal_newapply$lastdate" varname="lastdate$datetime"   />
+           <column id="changedate" mapping="changedate" showname="t_seal_newapply$changedate" varname="changedate$datetime"/>
+           <column id="changeuserid" mapping="changeuserid" showname="t_seal_newapply$changeuserid" varname="changeuserid$string"/>
+           <column id="changeusername" mapping="changeusername" showname="t_seal_newapply$changeusername" varname="changeusername$string"/>
+           <column id="orgid" mapping="orgid" showname="t_seal_newapply$orgid" varname="orgid$string"  hidden="false" />
+           <column id="orgname" mapping="orgname" showname="t_seal_newapply$orgname" varname="orgname$string"  hidden="false"/>
+           <column id="shbz" mapping="shbz" showname="t_seal_newapply$shbz" varname="shbz$number"  hidden="true"/>
+           <column id="workflowid" mapping="workflowid" showname="t_seal_newapply$workflowid" varname="workflowid$number"  hidden="true" />
+           <column id="unflag" mapping="unflag" showname="t_seal_newapply$unflag" varname="unflag$number"  hidden="true" />
+   	 </gridpanel> 
+   	  <button id="NewApplySingleWinButton" param="NewApplySingleWinList" text="返回选择" handler="rvNewApplySingle" callback="onChoose"/>
+   </window>
+        <script id="script"><![CDATA[
+         function rvNewApplySingle(p){
+           var recordArray = p.param.getSelectionModel().getSelection();
+           if(recordArray.length>0){
+           eval(p.callback+"(recordArray)");
+           }
+           NewApplySingleWin.close();
+        }
+       ]]>
+       </script>
+ </page>

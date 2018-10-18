@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="GBK"?>
+<page id="AreaDetail" mboname="AreaDetail"  beanclass="com.business.risk.area.Area" version="1.0">
+   <panel id="AreaForm"  menu="bsave,bsaveandnew"  closable="true" returnObj="true" layout="auto"  height="530"  width="825"  autoScroll="true"   title="风险区域&lt;编辑页面&gt;">
+         <formpanel id="AreaForm1"  closable="true"    layout="tableform" columns="1" height="400"   method="initForm">
+			 <formwidget id="filesetBegin1" xtype="filesetBegin" title="基本信息" columns="2"  />
+			    <formwidget fieldLabel="t_risk_area$showdesc" id="t_risk_area$showdesc" xtype="textfield" allowBlank="false" width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$parnet" id="t_risk_area$parnet" xtype="textfield" allowBlank="true" width="200" colspan="1"      />
+			    <formwidget fieldLabel="t_risk_area$bm" id="t_risk_area$bm" xtype="textfield" allowBlank="true" width="200" colspan="1"      />
+			    <formwidget fieldLabel="t_risk_area$lastuserid" id="t_risk_area$lastuserid" xtype="textfield" allowBlank="true" width="200" colspan="1"      />
+			    <formwidget fieldLabel="t_risk_area$lastusername" id="t_risk_area$lastusername" xtype="textfield" allowBlank="true" width="200" colspan="1"      />
+			    <formwidget fieldLabel="t_risk_area$lastdate" id="t_risk_area$lastdate" xtype="datefield" allowBlank="true" width="200" colspan="1"      />
+			    <formwidget id="filesetEnd1" xtype="filesetEnd"  /> 
+			    <formwidget id="userInfoBegin" xtype="filesetBegin" title="制单用户信息" columns="4"  />
+			    <formwidget fieldLabel="t_risk_area$status" id="t_risk_area$status" xtype="displayfield"   width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$changeusername" id="t_risk_area$changeusername" xtype="displayfield"  width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$orgname" id="t_risk_area$orgname" xtype="displayfield"   width="250" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$changedate" id="t_risk_area$changedate" xtype="displayfield"   width="250" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$changeuserid" id="t_risk_area$changeuserid" xtype="hidden"  width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$orgid" id="t_risk_area$orgid" xtype="hidden"   width="200" colspan="1"/>
+			    <formwidget fieldLabel="t_risk_area$unflag" id="t_risk_area$unflag" xtype="hidden"   width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$workflowid" id="t_risk_area$workflowid" xtype="hidden"  width="200" colspan="1"  />
+			    <formwidget fieldLabel="t_risk_area$shbz" id="t_risk_area$shbz" xtype="hidden"   width="200" colspan="1" />
+			    <formwidget fieldLabel="t_risk_area$sysid" id="t_risk_area$sysid" xtype="hidden"   width="200" colspan="1" />
+ 	  		    <formwidget id="userInfoEnd" xtype="filesetEnd"  /> 
+ 	  		 </formpanel>
+	     <editgridpanel menu=" "  title="风险" id="nullList" adquery="false"  url="methodName=getnullList&amp;#{unflag}"  autoload="true" closable="false" collapsible="true" collapsed="false">
+			<column id="sysid" mapping="sysid" showname="t_risk_fx$sysid"  varname="sysid" hidden="true" editor="{xtype: 'textfield'}"/>
+			<column id="unflag" mapping="unflag" showname="t_risk_fx$unflag"  varname="unflag" hidden="true" editor="{xtype: 'textfield'}"/>
+			<column id="bz" mapping="bz" showname="t_risk_fx$bz"  varname="bz" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="jz" mapping="jz" showname="t_risk_fx$jz"  varname="jz" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="wd" mapping="wd" showname="t_risk_fx$wd"  varname="wd" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="yl" mapping="yl" showname="t_risk_fx$yl"  varname="yl" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="fxbsfl" mapping="fxbsfl" showname="t_risk_fx$fxbsfl"  varname="fxbsfl" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="billid" mapping="billid" showname="t_risk_fx$billid"  varname="billid" hidden="false" editor="{xtype: 'textfield'}"   />
+	             <toolbar id="stdToolbar">
+		            <button id="nullListAdd"  text="新增" iconCls="newButton" handler="buttonHandler"/>
+                   <button id="nullListDel"  text="删除" iconCls="deleteButton" handler="buttonHandler"/>
+               </toolbar>
+		   </editgridpanel>
+	     <editgridpanel menu=" "  title="风控措施" id="nullList" adquery="false"  url="methodName=getnullList&amp;#{unflag}"  autoload="true" closable="false" collapsible="true" collapsed="false">
+			<column id="sysid" mapping="sysid" showname="t_risk_measures$sysid"  varname="sysid" hidden="true" editor="{xtype: 'textfield'}"/>
+			<column id="unflag" mapping="unflag" showname="t_risk_measures$unflag"  varname="unflag" hidden="true" editor="{xtype: 'textfield'}"/>
+			<column id="riskname" mapping="riskname" showname="t_risk_measures$riskname"  varname="riskname" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="ydcs" mapping="ydcs" showname="t_risk_measures$ydcs"  varname="ydcs" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="bz" mapping="bz" showname="t_risk_measures$bz"  varname="bz" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="lastuserid" mapping="lastuserid" showname="t_risk_measures$lastuserid"  varname="lastuserid" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="lastusername" mapping="lastusername" showname="t_risk_measures$lastusername"  varname="lastusername" hidden="false" editor="{xtype: 'textfield'}"   />
+			<column id="lastdate" mapping="lastdate" showname="t_risk_measures$lastdate"  varname="lastdate" hidden="false" editor="{xtype: 'datefield',format: 'Y-m-d'}"   />
+	             <toolbar id="stdToolbar">
+		            <button id="nullListAdd"  text="新增" iconCls="newButton" handler="buttonHandler"/>
+                   <button id="nullListDel"  text="删除" iconCls="deleteButton" handler="buttonHandler"/>
+               </toolbar>
+		   </editgridpanel>
+		   <gridpanel  width="1270" height="170"   title="附件列表" id="fileList"  adquery="true" op="singleOP"  url="methodName=getFileList&amp;#{unflag}&amp;tablename=T_RISK_AREA"  autoload="true" closable="false" >
+		           <column id="sysid" mapping="sysid" showname="t_bs_appendix$sysid" varname="sysid$number"  hidden="true" />
+		           <column id="billno" mapping="billno" showname="t_bs_appendix$billno" varname="billno$string"   hidden="true" />
+		           <column id="tablename" mapping="tablename" showname="t_bs_appendix$tablename" varname="tablename$string"  hidden="true" />
+		           <column id="filename" mapping="filename" showname="t_bs_appendix$filename" width="450" varname="filename$string" renderer="linkurl"  />
+		           <column id="filetype" mapping="filetype" showname="t_bs_appendix$filetype" width="150" varname="filetype$string"  />
+		           <column id="changeuserid" mapping="changeuserid" showname="t_bs_appendix$changeuserid" width="150" varname="changeuserid$string"   />
+		           <column id="changedate" mapping="changedate" showname="t_bs_appendix$changedate" width="150" varname="changedate$date"  />
+		           <toolbar id="stdFileToolbar">
+		              <button id="fileAdd"  text="新增" handler="buttonHandler"/>
+		              <button id="fileDel"  text="删除" handler="fileHandler"/>
+		           </toolbar>
+		   </gridpanel>
+   </panel>
+   <script id="script"><![CDATA[
+   
+   
+       nullListGrid=Ext.getCmp('nullList');
+       nullListGrid=Ext.getCmp('nullList');
+       
+       function getUnflag(){
+         return Ext.getCmp('AreaForm1').getForm().findField('t_risk_area$sysid').getValue();
+       }
+      //下载电子文档
+      fileList.on('cellclick',fileDownload,this);
+       function buttonHandler(t){
+           if(t.id=='fileAdd'){
+                var tableName="T_RISK_AREA";
+                s = fileList.getStore();
+                uploadFileFunc(tableName,getUnflag(),s,null);
+            }
+       if(t.id=='nullListAdd'){
+		       var rec = Ext.create('nullListModel',{
+		                    sysid: '',
+		                    bz: '', 
+		                    jz: '', 
+		                    wd: '', 
+		                    yl: '', 
+		                    fxbsfl: '', 
+		                    billid: '', 
+		        unflag:getUnflag(),
+	            active: true
+	            });
+		         
+		        rowEditing =nullListGrid.plugins[0];
+		        rowEditing.cancelEdit();
+		        nullListGrid.store.insert(0, rec);
+		        rowEditing.startEdit(0, 0);
+	        }
+	      if(t.id=='nullListDel'){
+	            var records = nullListGrid.getSelectionModel().getSelection();
+	            var delStr = "(";
+		          for(var i=0;i<records.length;i++){
+		            if(i==0){delStr +=records[i].get('sysid');}
+		            else{delStr += ","+records[i].get('sysid')+"";}
+		          }
+	           delStr += ")";
+              submitForm('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=delTable&tableName=t_risk_fx',delStr,nullListGrid.getStore());
+	      }   
+	        
+       if(t.id=='nullListAdd'){
+		       var rec = Ext.create('nullListModel',{
+		                    sysid: '',
+		                    riskname: '', 
+		                    ydcs: '', 
+		                    bz: '', 
+		                    lastuserid: '', 
+		                    lastusername: '', 
+		                    lastdate: Ext.Date.format(new Date(), 'm/d/Y'), 
+		        unflag:getUnflag(),
+	            active: true
+	            });
+		         
+		        rowEditing =nullListGrid.plugins[0];
+		        rowEditing.cancelEdit();
+		        nullListGrid.store.insert(0, rec);
+		        rowEditing.startEdit(0, 0);
+	        }
+	      if(t.id=='nullListDel'){
+	            var records = nullListGrid.getSelectionModel().getSelection();
+	            var delStr = "(";
+		          for(var i=0;i<records.length;i++){
+		            if(i==0){delStr +=records[i].get('sysid');}
+		            else{delStr += ","+records[i].get('sysid')+"";}
+		          }
+	           delStr += ")";
+              submitForm('MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=delTable&tableName=t_risk_measures',delStr,nullListGrid.getStore());
+	      }   
+	        
+       }
+       
+       //修改后自动保存
+       nullListGrid.on('edit', function(editor, e) {
+          e.newValues.unflag=getUnflag();
+          editGridToSave('t_risk_fx',e,'MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=saveTable')
+       });
+       //检查主表是否已保存
+       nullListGrid.on('beforeedit', function(editor, context, eOpts) {
+         return checkMainForm(Ext.getCmp('AreaForm1'));
+       });
+       
+       //修改后自动保存
+       nullListGrid.on('edit', function(editor, e) {
+          e.newValues.unflag=getUnflag();
+          editGridToSave('t_risk_measures',e,'MainAction.action?appFile=com.business.risk.area.AreaDetail&methodName=saveTable')
+       });
+       //检查主表是否已保存
+       nullListGrid.on('beforeedit', function(editor, context, eOpts) {
+         return checkMainForm(Ext.getCmp('AreaForm1'));
+       });
+   
+      ]]>
+   </script></page>

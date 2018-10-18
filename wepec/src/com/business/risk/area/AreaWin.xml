@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+ <page id="pageAreaWin" mboname="pageAreaWin"  beanclass="com.business.risk.area.Area" version="1.0">
+   <window id="AreaWin" title="选择风险区域" layout="fit" show="true" >
+   	 <gridpanel id="AreaWinList" menu=" " width="800"  height="480" tables="T_RISK_AREA,T_RISK_FX,T_RISK_MEASURES"  singleSelect="false" op="block"  url="methodName=getListChoose"  autoload="true" closable="false">
+           <column id="sysid" mapping="sysid" showname="t_risk_area$sysid" varname="sysid$number" hidden="true"/>
+           <column id="showdesc" mapping="showdesc" showname="t_risk_area$showdesc" varname="showdesc$string"   renderer="linkurl"/>
+           <column id="status" mapping="status" showname="t_risk_area$status" varname="status$string" renderer="auditurl"/>
+           <column id="changedate" mapping="changedate" showname="t_risk_area$changedate" varname="changedate$datetime"/>
+           <column id="changeuserid" mapping="changeuserid" showname="t_risk_area$changeuserid" varname="changeuserid$string"/>
+           <column id="changeusername" mapping="changeusername" showname="t_risk_area$changeusername" varname="changeusername$string"/>
+           <column id="orgid" mapping="orgid" showname="t_risk_area$orgid" varname="orgid$string"  hidden="false" />
+           <column id="orgname" mapping="orgname" showname="t_risk_area$orgname" varname="orgname$string"  hidden="false"/>
+           <column id="shbz" mapping="shbz" showname="t_risk_area$shbz" varname="shbz$number"  hidden="true"/>
+           <column id="workflowid" mapping="workflowid" showname="t_risk_area$workflowid" varname="workflowid$number"  hidden="true" />
+           <column id="unflag" mapping="unflag" showname="t_risk_area$unflag" varname="unflag$number"  hidden="true" />
+   	 </gridpanel> 
+   	  <button id="AreaWinButton" param="AreaWinList" text="返回选择" handler="rvArea" callback="onChoose"/>
+   </window>
+        <script id="script"><![CDATA[
+         function rvArea(p){
+           var recordArray = p.param.getSelectionModel().getSelection();
+           if(recordArray.length>0){
+           eval(p.callback+"(recordArray)");
+           }
+           AreaWin.close();
+        }
+       ]]>
+       </script>
+ </page>
