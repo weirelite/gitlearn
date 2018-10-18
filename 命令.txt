@@ -2,4 +2,7 @@ git remote rm origin 移除关联的远程仓库地址
 git remote add origin https://github.com/weirelite/gitlearn.git 本地仓库与远程仓库进行关联
 git push -u origin master   推送本地仓库内容到远程仓库 第一次需要加-u 后续不需要
 git clone https://github.com/weirelite/gitlearn.git  将远程仓库的内容克隆到 本地
-git checkout -d 创建并切换到分支
+git branch dev 创建分支 dev  不带分支名称 查看分支
+git checkout -b 创建并切换到分支
+git merge dev 合并分支到当前分支上
+git branch -d dev 删除分支
